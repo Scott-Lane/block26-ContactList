@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import React from "react";
 import ContactList from './components/ContactList';
-
+import SelectedContact from './components/SelectedContact';
 
 // create a on click function that when a user clicks on a specific contact row it navigates
 // to a separate view showing the selected contact and details about them
@@ -17,7 +17,10 @@ export default function App() {
   return (
     <>
     {selectedContactId ? (
-      <div> Selected Contact View </div>
+      <SelectedContact 
+        selectedContactId={selectedContactId}
+        setSelectedContactId={setSelectedContactId}
+        />
     ) : (
       <ContactList 
         setSelectedContactId={setSelectedContactId}
