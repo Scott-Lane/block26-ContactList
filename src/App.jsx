@@ -4,12 +4,26 @@ import React from "react";
 import ContactList from './components/ContactList';
 
 
+// create a on click function that when a user clicks on a specific contact row it navigates
+// to a separate view showing the selected contact and details about them
+
+// map out the contacts with the onClick property 
+// set a featured contact similar to puppy pals workshop
+// console.log then key the information details you want shown
 
 
 export default function App() {
+  const [selectedContactId, setSelectedContactId] = useState(null);
   return (
     <>
-      <ContactList />
+    {selectedContactId ? (
+      <div> Selected Contact View </div>
+    ) : (
+      <ContactList 
+        setSelectedContactId={setSelectedContactId}
+        
+        />
+    )}
     </>
   );
 }
